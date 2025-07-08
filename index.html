@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmazonClone - E commerce website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <!-- Top Header -->
+            <div class="flex items-center justify-between py-2 border-b border-gray-700">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-orange-400 cursor-pointer" onclick="window.location.reload()">AmazonClone</h1>
+                    <div class="hidden md:flex items-center space-x-2 text-sm">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Deliver to</span>
+                        <span class="font-semibold">New York 10001</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button id="authBtn" class="text-white hover:text-orange-400 transition-colors flex items-center">
+                        <i class="fas fa-user mr-1"></i>
+                        <span id="authText">Sign In</span>
+                    </button>
+
+                    <button id="wishlistBtn" class="text-white hover:text-orange-400 transition-colors flex items-center">
+                        <i class="fas fa-heart mr-1"></i>
+                        <span class="hidden sm:inline">Wishlist</span>
+                        <span id="wishlistCount" class="ml-1 bg-orange-500 text-xs rounded-full px-1 min-w-[16px] h-4 flex items-center justify-center hidden">0</span>
+                    </button>
+
+                    <button id="cartBtn" class="text-white hover:text-orange-400 transition-colors relative flex items-center">
+                        <i class="fas fa-shopping-cart mr-1"></i>
+                        <span class="hidden sm:inline">Cart</span>
+                        <span id="cartCount" class="absolute -top-2 -right-2 bg-orange-500 text-xs rounded-full px-1 min-w-[20px] h-5 flex items-center justify-center hidden">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="py-3">
+                <div class="flex items-center space-x-4">
+                    <button id="mobileMenuBtn" class="md:hidden text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+
+                    <div class="flex-1 flex">
+                        <select id="categorySelect" class="bg-gray-200 text-gray-900 px-3 py-2 rounded-l-md border-r border-gray-300 focus:outline-none cursor-pointer">
+                            <option value="All">All Categories</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Books">Books</option>
+                            <option value="Home & Garden">Home & Garden</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Beauty">Beauty</option>
+                            <option value="Toys">Toys</option>
+                        </select>
+
+                        <input id="searchInput" type="text" placeholder="Search products..." class="flex-1 px-4 py-2 border-0 focus:ring-0 focus:outline-none">
+
+                        <button id="searchBtn" class="bg-orange-400 hover:bg-orange-500 text-gray-900 px-6 py-2 rounded-r-md transition-colors">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav id="navigation" class="hidden md:block pb-2">
+                <div class="flex items-center space-x-6 text-sm">
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="All">All</button>
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="Electronics">Electronics</button>
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="Clothing">Clothing</button>
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="Books">Books</button>
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="Home & Garden">Home & Garden</button>
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="Sports">Sports</button>
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="Beauty">Beauty</button>
+                    <button class="nav-category hover:text-orange-400 transition-colors" data-category="Toys">Toys</button>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobileNavigation" class="hidden md:hidden pb-2">
+                <div class="flex flex-col space-y-2 text-sm">
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="All">All Categories</button>
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="Electronics">Electronics</button>
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="Clothing">Clothing</button>
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="Books">Books</button>
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="Home & Garden">Home & Garden</button>
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="Sports">Sports</button>
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="Beauty">Beauty</button>
+                    <button class="nav-category text-left hover:text-orange-400 transition-colors" data-category="Toys">Toys</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Great Deals Every Day</h2>
+            <p class="text-xl mb-6">Discover millions of products at unbeatable prices</p>
+            <button class="bg-orange-400 hover:bg-orange-500 text-gray-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+                Shop Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <h3 id="sectionTitle" class="text-2xl font-semibold">Featured Products</h3>
+            <p id="resultsCount" class="text-gray-600">Loading products...</p>
+        </div>
+
+        <!-- Loading Skeleton -->
+        <div id="loadingSkeleton" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Skeleton will be generated by JavaScript -->
+        </div>
+
+        <!-- No Results -->
+        <div id="noResults" class="text-center py-12 hidden">
+            <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+            <p class="text-gray-500 text-lg mb-4">No products found</p>
+            <button id="clearFilters" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg transition-colors">
+                Clear Filters
+            </button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Products will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-semibold mb-4">Get to Know Us</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Press Releases</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Amazon Cares</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Make Money with Us</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Sell products</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become an Affiliate</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Advertise Your Products</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Self-Publish with Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Payment Products</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Business Card</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Shop with Points</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Reload Your Balance</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Currency Converter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Let Us Help You</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Your Account</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Your Orders</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Shipping Rates & Policies</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Returns & Replacements</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 AmazonClone. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="fixed inset-0 z-50 hidden">
+        <div class="fixed inset-0 bg-black bg-opacity-50" id="cartOverlay"></div>
+        <div class="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-xl transform transition-transform duration-300 translate-x-full" id="cartPanel">
+            <div class="flex flex-col h-full">
+                <div class="flex items-center justify-between p-4 border-b bg-gray-50">
+                    <h2 class="text-lg font-semibold flex items-center">
+                        <i class="fas fa-shopping-cart mr-2 text-orange-500"></i>
+                        Shopping Cart
+                    </h2>
+                    <button id="closeCart" class="text-gray-500 hover:text-gray-700 p-1">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="flex-1 overflow-y-auto p-4 custom-scrollbar" id="cartItems"></div>
+                <div id="cartFooter" class="border-t p-4 space-y-4 hidden bg-gray-50">
+                    <div class="flex justify-between items-center text-lg font-semibold">
+                        <span>Total:</span>
+                        <span id="cartTotal" class="text-orange-600">$0.00</span>
+                    </div>
+                    <div class="space-y-2">
+                        <button class="w-full bg-orange-400 hover:bg-orange-500 text-gray-900 py-3 rounded-lg font-semibold transition-colors">
+                            Proceed to Checkout
+                        </button>
+                        <button id="continueShopping" class="w-full border border-gray-300 hover:bg-gray-50 text-gray-800 py-3 rounded-lg font-semibold transition-colors">
+                            Continue Shopping
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden">
+        <div class="fixed inset-0 bg-black bg-opacity-50" id="authOverlay"></div>
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-md transform transition-all duration-300 scale-95" id="authModalContent">
+                <div class="flex items-center justify-between p-6 border-b">
+                    <h2 id="authModalTitle" class="text-xl font-semibold">Sign In</h2>
+                    <button id="closeAuth" class="text-gray-500 hover:text-gray-700 p-1">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <form id="authForm" class="p-6 space-y-4">
+                    <div id="nameField" class="hidden">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input id="name" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        <p id="nameError" class="text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input id="email" type="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <div class="relative">
+                            <input id="password" type="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent pr-10">
+                            <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <p id="passwordError" class="text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div id="confirmPasswordField" class="hidden">
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+                        <input id="confirmPassword" type="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        <p id="confirmPasswordError" class="text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <button type="submit" id="authSubmit" class="w-full bg-orange-400 hover:bg-orange-500 text-gray-900 py-3 rounded-lg font-semibold transition-colors">
+                        Sign In
+                    </button>
+                </form>
+                <div class="p-6 border-t text-center">
+                    <p class="text-sm text-gray-600">
+                        <span id="authSwitchText">Don't have an account?</span>
+                        <button id="authSwitch" class="text-blue-600 hover:text-blue-800 ml-1 font-medium">
+                            Create one
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="notification" class="fixed top-20 right-4 transform translate-x-full transition-transform duration-300 z-50">
+        <div class="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText">Success!</span>
+        </div>
+    </div>
+
+    <!-- Load JavaScript files in correct order -->
+    <script src="data.js"></script>
+    <script src="auth.js"></script>
+    <script src="cart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
