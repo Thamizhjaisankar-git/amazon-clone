@@ -73,18 +73,18 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 <table width="100%">
   <tr>
     <td align="left" width="100%">
-      <img src="home page.png" alt="home page" width="100%">
+      <img src="./public/home page.png" alt="home page" width="100%">
     </td>
 </table>
 
 <table width="100%">
   <tr>
     <td align="left" width="50%">
-      <img src="all products.png" alt="products" width="100%">
+      <img src="./public/all products.png" alt="products" width="100%">
     </td>
     <td width="1%"></td> <!-- gap -->
     <td align="right" width="50%">
-      <img src="search" alt="search" width="100%">
+      <img src="./public/search" alt="search" width="100%">
     </td>
   </tr>
 </table>
@@ -92,11 +92,11 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 <table width="100%">
   <tr>
     <td align="left" width="50%">
-      <img src="wishlist.png" alt="wishlist" width="100%">
+      <img src="./public/wishlist.png" alt="wishlist" width="100%">
     </td>
     <td width="1%"></td> <!-- gap -->
     <td align="right" width="50%">
-      <img src="cart.png" alt="cart" width="100%">
+      <img src="./public/cart.png" alt="cart" width="100%">
     </td>
   </tr>
 </table>
@@ -104,11 +104,11 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 <table width="100%">
   <tr>
     <td align="left" width="50%">
-      <img src="signin.png" alt="sign - in Page" width="100%">
+      <img src="./public/signin.png" alt="sign - in Page" width="100%">
     </td>
     <td width="1%"></td> <!-- gap -->
     <td align="right" width="50%">
-      <img src="sign up.png" alt="create account" width="100%">
+      <img src="./public/sign up.png" alt="create account" width="100%">
     </td>
   </tr>
 </table>
