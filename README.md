@@ -5,7 +5,6 @@ The **Amazon Clone** is a responsive e-commerce web application built to replica
 Developed with **HTML5, TailwindCSS, JavaScript, and React**, it provides users with features like product search, wishlist, cart management, and dynamic product listings.  
 The platform is optimized for **performance, scalability, and responsiveness**, ensuring a smooth shopping journey across devices.  
 
----
 
 ## 🎯 Goals  
 - Deliver a **responsive e-commerce platform** with a seamless user experience.  
@@ -14,7 +13,6 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 - Provide a **mobile-first design** with cross-browser compatibility.  
 - Build a foundation for future **payment and order management integration**.  
 
----
 
 ## ✨ Features  
 - 🛍️ **Dynamic Product Listings** – Browse products with real-time rendering.  
@@ -24,7 +22,6 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 - 📱 **Responsive Design** – Works seamlessly across desktop, tablet, and mobile.  
 - ⚡ **Fast Performance** – Optimized for smooth and scalable interactions.  
 
----
 
 ## 🛠️ Tech Stack  
 
@@ -34,7 +31,6 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 | State Management | React useState / useContext       |  
 | Deployment       | Vercel / Netlify                 |  
 
----
 
 ## 🚀 Installation & Setup  
 
@@ -84,7 +80,7 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
     </td>
     <td width="1%"></td> <!-- gap -->
     <td align="right" width="50%">
-      <img src="./public/search" alt="search" width="100%">
+      <img src="./public/search&filters.png" alt="search" width="100%">
     </td>
   </tr>
 </table>
