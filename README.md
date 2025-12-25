@@ -2,8 +2,8 @@
 
 ## 📖 Project Overview  
 The **Amazon Clone** is a responsive e-commerce web application built to replicate the **core online shopping experience**.  
-Developed with **HTML5, TailwindCSS, JavaScript, and React**, it provides users with features like product search, wishlist, cart management, and dynamic product listings.  
-The platform is optimized for **performance, scalability, and responsiveness**, ensuring a smooth shopping journey across devices.  
+Developed with **HTML5, TailwindCSS, JavaScript and React**, it provides users with features like product search, wishlist, cart management and dynamic product listings.  
+The platform is optimized for **performance, scalability and responsiveness**, ensuring a smooth shopping journey across devices.  
 
 
 ## 🎯 Goals  
@@ -19,7 +19,7 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 - 🛒 **Shopping Cart** – Add, remove, and update items in the cart.  
 - ❤️ **Wishlist** – Save products for later purchase.  
 - 🔍 **Search Functionality** – Quickly find products by name or category.  
-- 📱 **Responsive Design** – Works seamlessly across desktop, tablet, and mobile.  
+- 📱 **Responsive Design** – Works seamlessly across desktop, tablet and mobile.  
 - ⚡ **Fast Performance** – Optimized for smooth and scalable interactions.  
 
 
@@ -27,16 +27,16 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 
 | Category         | Tech Used                        |  
 |------------------|----------------------------------|  
-| Frontend         | HTML5, TailwindCSS, JavaScript, React.js |  
+| Frontend         | HTML5, TailwindCSS, JavaScript, React |  
 | State Management | React useState / useContext       |  
-| Deployment       | Vercel / Netlify                 |  
+| Deployment       | Vercel                  |  
 
 
 ## 🚀 Installation & Setup  
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/thamizhjaisankar-git/wanderlust.git
+   git clone https://github.com/Thamizhjaisankar-git/amazon-clone
    cd amazon-clone
 3. Install dependencies:
    ```bash
@@ -44,24 +44,20 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 
 4. Run the development server:
    ```bash
-   npm start
+   npm run dev
 
 5. Open your browser and visit:
    ```bash
-   http://localhost:3000
+   http://localhost:5173
 
 
 ## 📊 Future Enhancements
 
-💳 Integrated Payment Gateway (Stripe / Razorpay / UPI).
-
-📦 Order Management System (track order history & status).
-
-🔔 Push Notifications for offers and order updates.
-
-🌍 Multi-language Support for global accessibility.
-
-🧪 Testing Suite (unit, integration & UI tests with Jest/React Testing Library).
+- 💳 Integrated Payment Gateway (Stripe / Razorpay / UPI).
+- 📦 Order Management System (track order history & status).
+- 🔔 Push Notifications for offers and order updates.
+- 🌍 Multi-language Support for global accessibility.
+- 🧪 Testing Suite (unit, integration & UI tests with Jest/React Testing Library).
 
 
 ## 📸 Screenshots
@@ -113,8 +109,5 @@ The platform is optimized for **performance, scalability, and responsiveness**, 
 ## 👨‍💻 Author
 - **Thamizh Jaisankar**
 - 📧 [thamizhjaisankar@gmail.com](mailto:thamizhjaisankar@gmail.com)
-- 🔗 [Portfolio](https://portfolio-fawn-beta-24.vercel.app/) | [GitHub](https://github.com/Thamizhjaisankar-git) | [LinkedIn](https://www.linkedin.com/in/thamizhjaisankar)
-
-
-
+- 🔗 [Portfolio](https://thamizh-jl.vercel.app/) | [GitHub](https://github.com/Thamizhjaisankar-git) | [LinkedIn](https://www.linkedin.com/in/thamizhjaisankar)
 
